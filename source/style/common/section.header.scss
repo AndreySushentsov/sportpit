@@ -1,0 +1,16 @@
+.l-section__container_products{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: url('../img/bg1_img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.c-header__title{
+  @include centred;
+  color: $color_text;
+  z-index: 10;
+}

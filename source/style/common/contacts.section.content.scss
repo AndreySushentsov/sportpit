@@ -1,0 +1,80 @@
+.l-contacts__wrapper{
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background: $color_background;
+  padding: 50px 0;
+}
+.c-contacts__container{
+  @include centred(x);
+  background: #fff;
+  box-shadow: -10px 10px 17px #CDCDCD;
+  padding: 40px;
+}
+.c-contacts__description{
+  margin-top: 20px;
+}
+.c-form{
+  margin-top: 30px;
+
+}
+.c-form__input{
+  border: none;
+  border-bottom: 2px solid $color_text2;
+  outline: 0;
+  &:focus{
+    + .c-form__label{
+      transform: translateY(-30px);
+      opacity: 0.5;
+    }
+  }
+}
+.c-form__field{
+  position: relative;
+  margin: 40px 0;
+  width: 45%;
+  margin-right: 20px;
+  @include tablet{
+    width: 100%;
+    margin: 20px 0;
+  };
+}
+.c-form__field_submit {
+  width: auto;
+  margin: 0;
+  margin-top: 40px;
+  float: right;
+}
+.c-form__field_submit input{
+  padding: 10px 20px;
+  background: $color_footer;
+  border: none;
+  border-radius: 3px;
+  box-shadow: -3px 3px 7px #CDCDCD;
+  cursor: pointer;
+  outline: 0;
+  color: $color_text;
+}
+.c-form__textarea{
+  width: 100%;
+  position: relative;
+  @include tablet{
+    margin-top: 20px;
+  };
+}
+.c-form__textarea textarea{
+  width: 100%;
+}
+.c-form__label{
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: 0.3s;
+}
+.c-form__row{
+  display: flex;
+  flex-direction: row;
+  @include tablet{
+    flex-direction: column;
+  };
+}

@@ -1,0 +1,82 @@
+// переменные
+$color_footer: #232323; // цвет цвет футера
+$color_text: #E1E0E3; // цвет текста
+$color_text2:#939393;
+$color_page_about_3: #474b57; // цвет текста
+$color_background: #EDEDED; // цвет фона
+
+// подключаем примеси
+@import 'mixins/mixins';
+
+// GENERAL
+body,h1,h2,h3,h4,h5,h6,p,ul,li {
+  margin: 0;
+  padding: 0;
+
+}
+a{
+  text-decoration: none;
+  display: block;
+  color: $color_text;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Play', sans-serif;
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+header{
+  height: 450px;
+}
+li{
+  list-style-type: none;
+}
+
+.wrapper{
+  flex:1;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.l-about__nav{
+  background: $color_footer
+}
+// общие стили для секции 'content' на всех страницах
+.l-content__wrapper{
+  position: relative;
+  color: $color_text2;
+  background-color: $color_background;
+  display: flex;
+  flex-direction: row;
+}
+    // боковое меню
+.l-content__sidebar{
+  width: 15%;
+  height: 100vh;
+  font-size: 1rem;
+  position: relative;
+  @include mobile{
+    display: none;
+  };
+}
+    // контент
+.l-content__content{
+  margin: 0 3%;
+  flex: 1;
+}
+// Подключаем остальные стили
+
+@import 'common/section.main';
+@import 'common/_footer';
+@import 'common/_navigation';
+@import 'common/_overlay.navigation';
+@import 'common/section.header';
+@import 'common/section.products';
+@import 'common/about.section.content';
+@import 'common/programms.section.header';
+@import 'common/programms.section.content';
+@import 'common/contacts.section.header';
+@import 'common/contacts.section.content';

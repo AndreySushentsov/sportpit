@@ -1,0 +1,71 @@
+nav{
+  position: fixed;
+  color:$color_text;
+  width: 100%;
+  z-index: 100;
+  height: 70px;
+  transition: background 0.3s;
+}
+.nav__logo{
+
+  z-index: 10;
+  @include centred(y);
+  left: 30px;
+
+  @include mobile{
+    font-size: 25px;
+  };
+}
+
+
+.nav__list{
+  @include centred(y);
+  right: 0;
+  margin-right: 20px;
+  @include laptop{
+    display: none;
+  };
+}
+.nav__item{
+  display: inline-block;
+  margin: 0 10px;
+}
+.nav__link{
+  display: block;
+  text-decoration: none;
+  color: $color_text;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.4s;
+  &:hover{
+    color: #fff;
+  }
+}
+
+// burger menu
+.nav__burger{
+  @include centred(y);
+  right: 0;
+  margin-right: 3%;
+  display: none;
+  cursor: pointer;
+  @include laptop{
+    display: inline-block;
+  };
+}
+.bar1, .bar2, .bar3{
+  width: 25px;
+  height: 3px;
+  background-color: $color_text;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+.change .bar1{
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+.change .bar2{
+  opacity: 0;
+}
+.change .bar3{
+  transform: rotate(45deg) translate(-8px, -8px);
+}

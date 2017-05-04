@@ -1,0 +1,6 @@
+-var navigation_items = [{url:'about.html', menu:'Обо мне'},{url:'programms.html', menu:'Программы тренировок'},{url:'products.html', menu:'Спотрпит'},{url:'contacts.html', menu:'Контакты'}]
+.overlay-nav__container
+  ul.overlay-nav__list
+    each item in navigation_items
+      li.overlay-nav__item
+        a(href=item.url).overlay-nav__link=item.menu

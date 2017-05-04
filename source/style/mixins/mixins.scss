@@ -1,0 +1,85 @@
+
+// примесь отцентровыает блок по выбраной оси
+@mixin centred($axis:'both') {
+  position: absolute;
+
+  @if $axis == 'both'{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @if $axis == 'x'{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'y'{
+    top:50%;
+    transform: translateY(-50%);
+  }
+}
+
+// float
+@mixin clearfix{
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+// примесь для позиционирования левой и правой колонок
+@mixin col_position {
+  float: left;
+  width: 50%;
+  position: relative;
+  height: 100%;
+}
+//примесь для позиционирования загаловков внеутри страниц
+@mixin headers {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  font-size: 1.56rem;
+
+  &:after{
+    content: '';
+    display: block;
+    margin-top: 1.25rem;
+    height: 0.18rem;
+    width: 5.6rem;
+    background: $color_page_about_3;
+    @include centred('x');
+  }
+}
+//премесь для позиционирования треугольников
+@mixin triangle_position {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  float: left;
+}
+//примеси для медиа запросов
+@mixin desktop{
+  @media (max-width: 1200px){
+    @content;
+  }
+}
+
+@mixin laptop{
+  @media (max-width: 992px){
+    @content;
+  }
+}
+
+@mixin tablet{
+  @media (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin mobile{
+  @media (max-width: 480px){
+    @content;
+  }
+}

@@ -1,0 +1,28 @@
+//overlay menu
+.overlay-nav__container{
+  width: 0;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  transition: 0.3s;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+.show{
+  width: 100%;
+}
+.overlay-nav__list{
+  @include centred;
+}
+.overlay-nav__item{
+  margin: 20px 0;
+}
+.overlay-nav__link{
+  display: block;
+  text-decoration: none;
+  color: $color_text;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

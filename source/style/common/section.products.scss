@@ -1,0 +1,125 @@
+
+
+.c-categories__menu{
+  padding-top: 10%;
+  height: 100vh;
+  background:#BBBBBB;
+  width: 100%;
+  position: absolute;
+  padding: 0 10px;
+  overflow: hidden;
+
+}
+.c-categories__item{
+  margin: 12px 0;
+  color: $color_text2;
+  width: 100%;
+  font-size: 1.4rem;
+  transition: 0.3s;
+  &:hover,{
+    color: #fff;
+  }
+  @include tablet{
+    font-size: 1.2rem;
+  };
+}
+.c-categories__item.active{
+  color: #fff;
+}
+
+.c-products__item{
+  margin-top:30px;
+  @include mobile{
+    text-align: center;
+  };
+}
+.c-products__title{
+  font-size: 2.5rem;
+  padding-bottom: 10px;
+  border-bottom: 3px solid $color_text2;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  width: 40%;
+  text-align: center;
+  @include mobile{
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 25px;
+    color: #fff;
+    background-color: $color_text2;
+    border-radius: 4px;
+    box-shadow: 10px 10px 17px #CDCDCD;
+    border: none;
+    &:hover{
+      background: #727272;
+    }
+  };
+}
+// стили для аккардиона
+.c-products__content{
+  display: block;
+  @include mobile{
+    display: none;
+  };
+}
+
+// стили для карточек
+.c-card__container{
+  position: relative;
+  display: inline-block;
+  width: 31%;
+  margin:10px;
+  height: 200px;
+  transition: all 0.2s;
+  perspective: 1000;
+  cursor: pointer;
+
+  @include laptop{
+    width:45%;
+  };
+  @include mobile{
+    width: 80%;
+    margin: 10px;
+  };
+}
+.c-card__front,.c-card__back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: -10px 10px 17px #CDCDCD;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+}
+.c-card__back{
+  transform: rotateY(-180deg);
+}
+.flipped .c-card__back{
+  transform: rotateY(0deg);
+}
+.flipped .c-card__front{
+  transform: rotateY(180deg);
+}
+.c-card__overlay{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  color: $color_text;
+  text-align: center;
+  padding-top: 30%;
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.4s;
+  &:hover{
+    opacity: 1;
+  }
+}
+.c-card__image{
+  height: 100%;
+}
